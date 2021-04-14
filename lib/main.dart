@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'core/constants/app_contstants.dart';
+import 'core/constants/app_constants.dart';
 import 'provider_setup.dart';
 import 'ui/router.dart' as r;
 

@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../../services/authentication_service.dart';
+import '../base_model.dart';
 
-class LoginViewModel extends ChangeNotifier {
+class LoginViewModel extends BaseModel {
   AuthenticationService _authenticationService;
-  bool _busy;
 
   LoginViewModel({
     @required AuthenticationService authenticationService,
   }) : _authenticationService = authenticationService;
-
-  bool get busy => _busy;
-
-  void setBusy(bool value) {
-    _busy = value;
-    notifyListeners();
-  }
 
   Future<bool> login(String userIdText) async {
     setBusy(true);

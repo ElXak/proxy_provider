@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../core/constants/app_contstants.dart';
+import '../core/constants/app_constants.dart';
 import '../core/models/post.dart';
 import 'views/home_view.dart';
 import 'views/login_view.dart';
