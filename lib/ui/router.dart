@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../core/constants/app_constants.dart';
 import '../core/models/post.dart';

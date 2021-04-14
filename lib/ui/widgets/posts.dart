@@ -10,6 +10,7 @@ import 'post_list_item.dart';
 class Posts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print(Provider.of<User>(context).id);
     return BaseWidget<PostsModel>(
       model: PostsModel(api: Provider.of(context)),
       onModelReady: (model) => model.getPosts(Provider.of<User>(context).id),
