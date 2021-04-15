@@ -5,7 +5,7 @@ import '../../core/constants/app_constants.dart';
 import '../../core/view_models/views/login_view_model.dart';
 import '../shared/app_colors.dart';
 import '../widgets/login_header.dart';
-import 'base_widget.dart';
+import 'base_view.dart';
 
 class LoginView extends StatefulWidget {
   @override
@@ -17,7 +17,7 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
-    return BaseWidget<LoginViewModel>(
+    return BaseView<LoginViewModel>(
       model: LoginViewModel(authenticationService: Provider.of(context)),
       child: LoginHeader(controller: _controller),
       builder: (context, model, child) => Scaffold(

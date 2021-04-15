@@ -4,14 +4,13 @@ import 'package:provider/provider.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/models/user.dart';
 import '../../core/view_models/widgets/posts_model.dart';
-import '../views/base_widget.dart';
+import '../views/base_view.dart';
 import 'post_list_item.dart';
 
 class Posts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print(Provider.of<User>(context).id);
-    return BaseWidget<PostsModel>(
+    return BaseView<PostsModel>(
       model: PostsModel(api: Provider.of(context)),
       onModelReady: (model) => model.getPosts(Provider.of<User>(context).id),
       builder: (context, model, child) => model.busy

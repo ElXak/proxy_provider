@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class BaseWidget<T extends ChangeNotifier> extends StatefulWidget {
+class BaseView<T extends ChangeNotifier> extends StatefulWidget {
   final Widget Function(BuildContext context, T model, Widget child) builder;
   final T model;
   final Widget child;
   final Function(T) onModelReady;
 
-  BaseWidget({Key key, this.builder, this.model, this.child, this.onModelReady})
+  BaseView({Key key, this.builder, this.model, this.child, this.onModelReady})
       : super(key: key);
 
   @override
-  _BaseWidgetState<T> createState() => _BaseWidgetState<T>();
+  _BaseViewState<T> createState() => _BaseViewState<T>();
 }
 
-class _BaseWidgetState<T extends ChangeNotifier> extends State<BaseWidget<T>> {
+class _BaseViewState<T extends ChangeNotifier> extends State<BaseView<T>> {
   T model;
 
   @override
@@ -28,8 +28,8 @@ class _BaseWidgetState<T extends ChangeNotifier> extends State<BaseWidget<T>> {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<T>.value(
-      value: model,
+    return ChangeNotifierProvider<T>(
+      create: (context) => model,
       child: Consumer<T>(
         builder: widget.builder,
         child: widget.child,
