@@ -1,6 +1,6 @@
 # proxy_provider
 
-A new Flutter project.
+A Provider Architecture in Flutter.
 
 ## Getting Started
 
