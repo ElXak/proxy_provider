@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'core/constants/app_constants.dart';
 import 'provider_setup.dart';
-import 'ui/router.dart' as r;
+import 'ui/router.dart' as router;
 
-void main() => runApp(MyApp());
+void main() {
+  // Logger.level = Level.info;
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -17,8 +19,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: RoutePaths.Login,
-        onGenerateRoute: r.Router.generateRoute,
+        initialRoute: router.initialRoute,
+        onGenerateRoute: router.generateRoute,
       ),
     );
   }

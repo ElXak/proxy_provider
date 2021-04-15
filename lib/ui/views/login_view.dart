@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../core/constants/app_constants.dart';
 import '../../core/view_models/views/login_view_model.dart';
+import '../../logger.dart';
 import '../shared/app_colors.dart';
 import '../widgets/login_header.dart';
 import 'base_view.dart';
@@ -13,6 +14,20 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  final log = getLogger('HomeView');
+/*
+  final Logger log = Logger(
+    // printer: PrettyPrinter(
+    //     methodCount: 0,
+    //     errorMethodCount: 3,
+    //     lineLength: 50,
+    //     colors: true,
+    //     printEmojis: true,
+    //     printTime: false),
+    printer: SimpleLogPrinter('HomeView'),
+  );
+*/
+
   final TextEditingController _controller = TextEditingController();
 
   @override
@@ -43,6 +58,15 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            log.v('This is verbose');
+            log.d('This is a debug message');
+            log.i('This is info, should be used for public calls');
+            log.w('This might become a problem');
+            log.e('Something bad has happened');
+          },
         ),
       ),
     );
