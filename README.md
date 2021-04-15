@@ -1,6 +1,8 @@
 # proxy_provider
 
 A Provider Architecture in Flutter.
+Logging basics implemented.
+Routing basics implemented
 
 ## Getting Started
 
